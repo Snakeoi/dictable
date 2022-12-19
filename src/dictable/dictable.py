@@ -86,14 +86,13 @@ class Dictable:
 
     def validate(self, list_of_dicts: List[dict]) -> None:
         """
-        Checks if the parameter is a list of dictionaries. If it is not it raises a DictableError.
+        Checks if the parameter is a list of dictionaries.
+        If it is not it raises a DictableError.
         It returns no value.
 
         :param list_of_dicts: list of dictionaries for validation
         :raise: DictableError if list_of_dicts is not a list of dictionaries.
         :return: nothing
-        """
-        """
         """
         if type(list_of_dicts) != list:
             raise DictableError('wrong structure: object is not list')
@@ -189,14 +188,14 @@ def csv_to_list_of_dicts(path, delimiter: str = ",", quotechar: str = '"', encod
     list_of_dicts: List[dict] = []
     if len(table) > 1:
         if exclude_auto_typing == '':
-            row_dict: dict = {}
             for row in table[1:]:
+                row_dict: dict = {}
                 for index, value in enumerate(row):
                     row_dict[table[0][index]] = auto_type(value)
                 list_of_dicts.append(row_dict)
         elif exclude_auto_typing == 'all':
-            row_dict: dict = {}
             for row in table[1:]:
+                row_dict: dict = {}
                 for index, value in enumerate(row):
                     row_dict[table[0][index]] = value
                 list_of_dicts.append(row_dict)
@@ -204,8 +203,8 @@ def csv_to_list_of_dicts(path, delimiter: str = ",", quotechar: str = '"', encod
             excluded_headers = exclude_auto_typing.split(',')
             for idx, v in enumerate(excluded_headers):
                 excluded_headers[idx] = v.strip()
-            row_dict: dict = {}
             for row in table[1:]:
+                row_dict: dict = {}
                 for index, value in enumerate(row):
                     if table[0][index] in excluded_headers:
                         row_dict[table[0][index]] = value

@@ -10,6 +10,14 @@ def test_dictable_save_and_load_csv():
                     "like dogs": True,
                     "like bugs": False,
                     "bills to pay": None,
+                },
+                {
+                    "name": "Tony",
+                    "age": 25,
+                    "money": 1,
+                    "like dogs": False,
+                    "like bugs": False,
+                    "bills to pay": None,
                 }
             ]
     created_dt = Dictable(data)
@@ -41,6 +49,14 @@ def test_dictable_save_and_load_csv_with_no_auto_type():
                     "like dogs": "True",
                     "like bugs": "False",
                     "bills to pay": "None",
+                },
+                {
+                    "name": "Tony",
+                    "age": "25",
+                    "money": "1",
+                    "like dogs": "False",
+                    "like bugs": 'False',
+                    "bills to pay": 'None',
                 }
             ]
     created_dt = Dictable(data)
@@ -70,6 +86,14 @@ def test_dictable_save_and_load_csv_with_auto_type_exclude():
                     "age": "22",
                     "money": "0.1",
                     "like dogs": True,
+                    "like bugs": "False",
+                    "bills to pay": None,
+                },
+                {
+                    "name": "Tony",
+                    "age": "25",
+                    "money": "1",
+                    "like dogs": False,
                     "like bugs": "False",
                     "bills to pay": None,
                 }

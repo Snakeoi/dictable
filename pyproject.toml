@@ -18,5 +18,5 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = ""
-"Bug Tracker" = ""
+"Homepage" = "https://github.com/Snakeoi/dictable"
+"Bug Tracker" = "https://github.com/Snakeoi/dictable/issues"
